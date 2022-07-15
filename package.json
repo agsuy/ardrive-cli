@@ -18,6 +18,8 @@
 	},
 	"devDependencies": {
 		"@istanbuljs/nyc-config-typescript": "^1.0.1",
+		"@swc/cli": "^0.1.57",
+		"@swc/core": "^1.2.196",
 		"@types/bn.js": "^5",
 		"@types/chai": "^4.2.21",
 		"@types/jwk-to-pem": "^2.0.0",
@@ -56,7 +58,9 @@
 		"typecheck": "tsc --noemit",
 		"build": "yarn clean && tsc --project ./tsconfig.prod.json",
 		"ci": "yarn build && yarn test",
-		"dev": "yarn clean && tsc --project ./tsconfig.prod.json -w"
+		"dev": "yarn clean && tsc --project ./tsconfig.prod.json -w",
+		"swcify": "swc src --out-dir lib --copy-files",
+		"prepublishOnly": "npm install --force && npm run swcify"
 	},
 	"husky": {
 		"hooks": {
