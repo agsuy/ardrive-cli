@@ -31,7 +31,7 @@ jobs:
           node-version: "14"
           registry-url: "https://registry.npmjs.org"
 
-      - name: Build ardrive-cli-test
+      - name: Build ardrive-cli
         run: npm run prepublishOnly
 
       - name: Install standalone cli dependencies
@@ -52,14 +52,14 @@ jobs:
           draft: true
           tag_name: ${{ steps.vars.outputs.tag_name }}
           body: |
-            * [Linux (arm64)](https://github.com/tailwindlabs/ardrive-cli-test/releases/download/${{ steps.vars.outputs.tag_name }}/ardrive-cli-test-linux-arm64)
-            * [Linux (x64)](https://github.com/tailwindlabs/ardrive-cli-test/releases/download/${{ steps.vars.outputs.tag_name }}/ardrive-cli-test-linux-x64)
-            * [macOS (arm64)](https://github.com/tailwindlabs/ardrive-cli-test/releases/download/${{ steps.vars.outputs.tag_name }}/ardrive-cli-test-macos-arm64)
-            * [macOS (x64)](https://github.com/tailwindlabs/ardrive-cli-test/releases/download/${{ steps.vars.outputs.tag_name }}/ardrive-cli-test-macos-x64)
-            * [Windows (x64)](https://github.com/tailwindlabs/ardrive-cli-test/releases/download/${{ steps.vars.outputs.tag_name }}/ardrive-cli-test-windows-x64.exe)
+            * [Linux (arm64)](https://github.com/agsuy/ardrive-cli/releases/download/${{ steps.vars.outputs.tag_name }}/ardrive-cli-linux-arm64)
+            * [Linux (x64)](https://github.com/agsuy/ardrive-cli/releases/download/${{ steps.vars.outputs.tag_name }}/ardrive-cli-linux-x64)
+            * [macOS (arm64)](https://github.com/agsuy/ardrive-cli/releases/download/${{ steps.vars.outputs.tag_name }}/ardrive-cli-macos-arm64)
+            * [macOS (x64)](https://github.com/agsuy/ardrive-cli/releases/download/${{ steps.vars.outputs.tag_name }}/ardrive-cli-macos-x64)
+            * [Windows (x64)](https://github.com/agsuy/ardrive-cli/releases/download/${{ steps.vars.outputs.tag_name }}/ardrive-cli-windows-x64.exe)
           files: |
-            standalone-cli/dist/ardrive-cli-test-linux-arm64
-            standalone-cli/dist/ardrive-cli-test-linux-x64
-            standalone-cli/dist/ardrive-cli-test-macos-arm64
-            standalone-cli/dist/ardrive-cli-test-macos-x64
-            standalone-cli/dist/ardrive-cli-test-windows-x64.exe
+            standalone-cli/dist/ardrive-cli-linux-arm64
+            standalone-cli/dist/ardrive-cli-linux-x64
+            standalone-cli/dist/ardrive-cli-macos-arm64
+            standalone-cli/dist/ardrive-cli-macos-x64
+            standalone-cli/dist/ardrive-cli-windows-x64.exe
